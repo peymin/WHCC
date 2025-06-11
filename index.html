@@ -1,0 +1,2548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fixandflip</title>
+    <!-- <link rel="stylesheet" href="./src/css/fixandflip.css" /> -->
+
+    <link rel="stylesheet" crossorigin href="./assets/index-ls8Ek_ya.css" />
+  </head>
+  <body>
+    <!-- #region wrapper -->
+    <div class="wrapper relative w-full min-h-[100vh] flex flex-col">
+      <!-- #region profile-sidebar -->
+      <!--translate-x-full-->
+      <div
+        class="profile-sidebar fixed top-0 right-0 h-screen w-[56vw] md:w-[40vw] z-[200] py-[72px] px-[12px] transition-all duration-300 translate-x-full ease-linear shadow-md shadow-amber-300 bg-white md:py-[90px] md:px-[56px]"
+      >
+        <button
+          class="close-profile-sidebar w-[15px] h-[15px] top-[15px] left-[15px] md:w-[25px] md:h-[25px] absolute md:top-[25px] md:left-[25px] cursor-pointer opacity-50 hover:opacity-100"
+          onclick="closeProfileSidebar()"
+        >
+          <img
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20448%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.5.2%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202024%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M41%2039C31.6%2029.7%2016.4%2029.7%207%2039S-2.3%2063.6%207%2073l183%20183L7%20439c-9.4%209.4-9.4%2024.6%200%2033.9s24.6%209.4%2033.9%200l183-183L407%20473c9.4%209.4%2024.6%209.4%2033.9%200s9.4-24.6%200-33.9l-183-183L441%2073c9.4-9.4%209.4-24.6%200-33.9s-24.6-9.4-33.9%200l-183%20183L41%2039z'/%3e%3c/svg%3e"
+            alt="close-profile-sidebar"
+          />
+        </button>
+        <h1
+          class="text-center text-[18px] font-[700] text-[black] md:text-[22px] mb-[40px]"
+        >
+          My Account
+        </h1>
+        <div class="profile-btns-container flex flex-col gap-y-[20px]">
+          <button
+            class="cursor-pointer profile-btn px-2 w-full h-[40px] transition-all duration-300 ease-linear flex flex-row justify-between items-center group hover:bg-[#ffcc00]"
+          >
+            <p
+              class="block text-[14px] font-bold leading-[40px] text-[#1d2939] capitalize group-hover:text-white"
+            >
+              profile
+            </p>
+
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20448%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.5.2%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202024%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M313.9%20105.9L436.7%20228.7c7.2%207.2%2011.3%2017.1%2011.3%2027.3s-4.1%2020.1-11.3%2027.3L313.9%20406.1c-6.4%206.4-15%209.9-24%209.9c-18.7%200-33.9-15.2-33.9-33.9l0-62.1-128%200c-17.7%200-32-14.3-32-32l0-64c0-17.7%2014.3-32%2032-32l128%200%200-62.1c0-18.7%2015.2-33.9%2033.9-33.9c9%200%2017.6%203.6%2024%209.9zM64%2096l0%20320c0%2017.7-14.3%2032-32%2032s-32-14.3-32-32L0%2096C0%2078.3%2014.3%2064%2032%2064s32%2014.3%2032%2032z'/%3e%3c/svg%3e"
+              class="h-[30px] w-[30px] object-cover opacity-50 group-hover:opacity-100"
+              alt="right-arrow"
+            />
+          </button>
+          <button
+            class="cursor-pointer profile-btn px-2 w-full h-[40px] transition-all duration-300 ease-linear flex flex-row justify-between items-center group hover:bg-[#ffcc00]"
+          >
+            <p
+              class="block text-[14px] font-bold leading-[40px] text-[#1d2939] capitalize group-hover:text-white"
+            >
+              plans
+            </p>
+
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20448%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.5.2%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202024%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M313.9%20105.9L436.7%20228.7c7.2%207.2%2011.3%2017.1%2011.3%2027.3s-4.1%2020.1-11.3%2027.3L313.9%20406.1c-6.4%206.4-15%209.9-24%209.9c-18.7%200-33.9-15.2-33.9-33.9l0-62.1-128%200c-17.7%200-32-14.3-32-32l0-64c0-17.7%2014.3-32%2032-32l128%200%200-62.1c0-18.7%2015.2-33.9%2033.9-33.9c9%200%2017.6%203.6%2024%209.9zM64%2096l0%20320c0%2017.7-14.3%2032-32%2032s-32-14.3-32-32L0%2096C0%2078.3%2014.3%2064%2032%2064s32%2014.3%2032%2032z'/%3e%3c/svg%3e"
+              class="h-[30px] w-[30px] object-cover opacity-50 group-hover:opacity-100"
+              alt="right-arrow"
+            />
+          </button>
+          <button
+            class="cursor-pointer profile-btn px-2 w-full h-[40px] transition-all duration-300 ease-linear flex flex-row justify-between items-center group hover:bg-[#ffcc00]"
+          >
+            <p
+              class="block text-[14px] font-bold leading-[40px] text-[#1d2939] capitalize group-hover:text-white"
+            >
+              billing
+            </p>
+
+            <img
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20448%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.5.2%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202024%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M313.9%20105.9L436.7%20228.7c7.2%207.2%2011.3%2017.1%2011.3%2027.3s-4.1%2020.1-11.3%2027.3L313.9%20406.1c-6.4%206.4-15%209.9-24%209.9c-18.7%200-33.9-15.2-33.9-33.9l0-62.1-128%200c-17.7%200-32-14.3-32-32l0-64c0-17.7%2014.3-32%2032-32l128%200%200-62.1c0-18.7%2015.2-33.9%2033.9-33.9c9%200%2017.6%203.6%2024%209.9zM64%2096l0%20320c0%2017.7-14.3%2032-32%2032s-32-14.3-32-32L0%2096C0%2078.3%2014.3%2064%2032%2064s32%2014.3%2032%2032z'/%3e%3c/svg%3e"
+              class="h-[30px] w-[30px] object-cover opacity-50 group-hover:opacity-100"
+              alt="right-arrow"
+            />
+          </button>
+        </div>
+      </div>
+      <!-- #endregion profile-sidebar -->
+
+      <!-- #region header -->
+      <div
+        class="fixed z-100 h-fit w-full flex justify-between items-center py-[3px] px-2 md:w-full bg-white md:p-1 shadow-sm"
+      >
+        <!-- #region header logo container -->
+        <div
+          class="flex items-center w-[150px] h-[40px] md:w-[150px] md:h-[40px]"
+        >
+          <img
+            class="object-cover w-full h-full"
+            src="./assets/logo_prev_ui-DHkpYPtE.png"
+            alt="Wholesale Calculators Logo"
+          />
+        </div>
+        <!-- #endregion header logo container -->
+
+        <!--user profile start-->
+        <div
+          class="flex flex-col gap-x-[20px] gap-y-[10px] items-center h-full md:hidden profile-sidebar"
+        >
+          <div class="w-fit flex items-center gap-x-3 justify-center">
+            <button
+              class="w-[15px] h-[15px] object-center cursor-pointer profile-sidebar-btn"
+              onclick="openProfileSidebar()"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.5.2%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202024%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M0%2096C0%2078.3%2014.3%2064%2032%2064H416c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032H32C14.3%20128%200%20113.7%200%2096zM64%20256c0-17.7%2014.3-32%2032-32H480c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032H96c-17.7%200-32-14.3-32-32zM448%20416c0%2017.7-14.3%2032-32%2032H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32H416c17.7%200%2032%2014.3%2032%2032z'/%3e%3c/svg%3e"
+                alt="bars"
+              />
+            </button>
+            <img
+              class="w-[40px] h-[40px] object-center"
+              src="./assets/user-pic-BkgBKJqR.png"
+              alt="user-img"
+            />
+          </div>
+          <!-- <div class="flex items-center text-ellipsis overflow-hidden">
+            <p class="text-[14px] font-[700] text-[#1d2939] text-center">
+              maximillian Dier
+            </p>
+          </div> -->
+        </div>
+        <!--user profile end-->
+
+        <!-- #region header heading -->
+        <!-- <div
+          class="flex justify-center items-center flex-col flex-wrap md:hidden"
+        >
+          <h1
+            class="text-center text-[20px] font-[700] text-[#ffcc00] md:text-[24px]"
+          >
+            Fix And Flip
+          </h1>
+          <h2 class="text-center text-[20px] text-[#1d2939]">
+            Wholesale Calculator
+          </h2>
+        </div> -->
+        <!-- #endregion header heading -->
+        <!-- #region header user prof -->
+        <div class="hidden md:flex md:flex-row md:gap-x-5 md:items-center">
+          <!--
+          <button class="w-[70px] h-[70px] cursor-pointer">
+            <img
+              class="w-full h-full object-cover"
+              src="/public/images/close-tressure.png"
+              alt="close-tressure"
+            />
+          </button>
+          -->
+          <div
+            class="md:flex md:flex-row md:gap-x-[20px] md:px-[5px] md:items-center h-full"
+          >
+            <div class="w-fit flex items-center gap-x-3 justify-center">
+              <button
+                class="w-[15px] h-[15px] object-center cursor-pointer profile-sidebar-btn"
+                onclick="openProfileSidebar()"
+              >
+                <img
+                  class="w-full h-full object-cover"
+                  src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.5.2%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202024%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M0%2096C0%2078.3%2014.3%2064%2032%2064H416c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032H32C14.3%20128%200%20113.7%200%2096zM64%20256c0-17.7%2014.3-32%2032-32H480c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032H96c-17.7%200-32-14.3-32-32zM448%20416c0%2017.7-14.3%2032-32%2032H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32H416c17.7%200%2032%2014.3%2032%2032z'/%3e%3c/svg%3e"
+                  alt="bars"
+                />
+              </button>
+              <img
+                class="w-[40px] h-[40px] object-center"
+                src="./assets/user-pic-BkgBKJqR.png"
+                alt="user-img"
+              />
+            </div>
+            <div class="flex items-center text-ellipsis overflow-hidden">
+              <p class="text-[16px] font-[700] text-[#1d2939] text-center">
+                maximillian Dier
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- #endregion header user prof -->
+      </div>
+      <!-- #endregion header -->
+
+      <!-- #region sidebar-->
+      <div
+        class="z-50 fixed top-[48px] md:top-[48px] left-0 w-[170px] bottom-0 px-1 pt-0 overflow-y-auto shadow-sm bg-white md:w-[160px] md:py-4"
+      >
+        <!-- #region nav-->
+        <nav class="flex flex-col gap-y-[30px]">
+          <!-- #region nav section-->
+          <div class="flex flex-col gap-y-1 w-full">
+            <!--nav section heading start-->
+            <h1 class="text-[14px] font-bold mont-bold text-[#ffcc00]">Cash</h1>
+            <!--nav section heading end-->
+            <!--nav link start-->
+            <a
+              class="w-full flex justify-between items-center bg-[#ffcc00] transition-all duration-300 ease-linear group hover:bg-[#ffcc00] py-2 px-1"
+              href="#"
+            >
+              <!--nav icon container start-->
+              <div class="w-[30px] h-[30px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/fix_flip-BVofPH_R.png"
+                  alt="Fix&Flip"
+                />
+              </div>
+              <!--nav icon container end-->
+              <!--nav link anchor start-->
+              <p
+                class="text-[12px] cursor-pointer text-white font-[700] transition-all duration-300 ease-linear group-hover:text-white"
+              >
+                Fix And Flip
+              </p>
+              <!--nav link anchor end-->
+            </a>
+            <a
+              class="w-full flex justify-between items-center bg-white transition-all duration-300 ease-linear group hover:bg-[#ffcc00] py-2 px-1"
+              href="./land.html"
+            >
+              <!--nav icon container start-->
+              <div class="w-[30px] h-[30px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/land-C5PtCgV4.png"
+                  alt="Land"
+                />
+              </div>
+              <!--nav icon container end-->
+              <!--nav link anchor start-->
+              <p
+                class="text-[12px] cursor-pointer text-black font-[700] transition-all duration-300 ease-linear group-hover:text-white"
+              >
+                Land
+              </p>
+              <!--nav link anchor end-->
+            </a>
+            <a
+              class="w-full cursor-pointer flex justify-between items-center bg-white transition-all duration-300 ease-linear group hover:bg-[#ffcc00] py-2 px-1"
+              href="/rental.html"
+            >
+              <!--nav icon container start-->
+              <div class="w-[30px] h-[30px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/rental-9Kt21WZv.png"
+                  alt="Rental"
+                />
+              </div>
+              <!--nav icon container end-->
+              <!--nav link anchor start-->
+              <p
+                class="text-[12px] text-black font-[700] transition-all duration-300 ease-linear group-hover:text-white"
+              >
+                Rental
+              </p>
+              <!--nav link anchor end-->
+            </a>
+            <!--nav link end-->
+          </div>
+          <!-- #endregion nav section-->
+          <!-- #region nav section-->
+          <div class="flex flex-col gap-y-1 w-full">
+            <!--nav section heading start-->
+            <h1 class="text-[14px] font-bold mont-bold text-[#ffcc00]">
+              Creative
+            </h1>
+            <!--nav section heading end-->
+            <!--nav link start-->
+            <a
+              class="cursor-pointer w-full flex justify-between items-center bg-white transition-all duration-300 ease-linear group hover:bg-[#ffcc00] py-2 px-1"
+              href="/subjectto.html"
+            >
+              <!--nav icon container start-->
+              <div class="w-[30px] h-[30px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/subject-to-DcUQYoId.png"
+                  alt="subject"
+                />
+              </div>
+              <!--nav icon container end-->
+              <!--nav link anchor start-->
+              <p
+                class="text-[12px] cursor-pointer text-black font-[700] transition-all duration-300 ease-linear group-hover:text-white"
+              >
+                Subject to
+              </p>
+              <!--nav link anchor end-->
+            </a>
+            <a
+              class="cursor-pointer w-full flex justify-between items-center bg-white transition-all duration-300 ease-linear group hover:bg-[#ffcc00] py-2 px-1"
+              href="/sellerfinance.html"
+            >
+              <!--nav icon container start-->
+              <div class="w-[30px] h-[30px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/sellerFinance-DERFu55g.png"
+                  alt="seller"
+                />
+              </div>
+              <!--nav icon container end-->
+              <!--nav link anchor start-->
+              <p
+                class="text-[12px] text-black font-[700] transition-all duration-300 ease-linear group-hover:text-white"
+              >
+                Seller Finance
+              </p>
+              <!--nav link anchor end-->
+            </a>
+            <a
+              class="cursor-pointer w-full flex justify-between items-center bg-white transition-all duration-300 ease-linear group hover:bg-[#ffcc00] py-2 px-1"
+              href="./novation.html"
+            >
+              <!--nav icon container start-->
+              <div class="w-[30px] h-[30px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/novation-DSAVFxrQ.png"
+                  alt="novation"
+                />
+              </div>
+              <!--nav icon container end-->
+              <!--nav link anchor start-->
+              <p
+                class="text-[12px] text-black font-[700] transition-all duration-300 ease-linear group-hover:text-white"
+              >
+                Novation
+              </p>
+              <!--nav link anchor end-->
+            </a>
+            <!--nav link end-->
+          </div>
+          <!-- #endregion nav section-->
+          <!-- #region nav section-->
+          <div class="flex flex-col gap-y-1 w-full">
+            <!--nav section heading start-->
+            <h1 class="text-[14px] font-bold mont-bold text-[#ffcc00]">
+              Community
+            </h1>
+            <!--nav section heading end-->
+            <!--nav link start-->
+            <a
+              class="cursor-pointer w-full flex justify-between items-center bg-white transition-all duration-300 ease-linear group hover:bg-[#ffcc00] py-2 px-1"
+              href="#"
+            >
+              <!--nav icon container start-->
+              <div class="w-[30px] h-[30px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/community-D_Ed-sZj.png"
+                  alt="community"
+                />
+              </div>
+              <!--nav icon container end-->
+              <!--nav link anchor start-->
+              <p
+                class="text-[12px] text-black font-[700] transition-all duration-300 ease-linear group-hover:text-white"
+              >
+                Community
+              </p>
+              <!--nav link anchor end-->
+            </a>
+            <!--nav link end-->
+          </div>
+          <!-- #endregion nav section-->
+          <!-- #region nav section-->
+          <div class="flex flex-col gap-y-1 w-full">
+            <!--nav section heading start-->
+            <h1 class="text-[14px] font-bold mont-bold text-[#ffcc00]">
+              Dispo
+            </h1>
+            <!--nav section heading end-->
+            <!--nav link start-->
+            <a
+              class="cursor-pointer w-full flex justify-between items-center bg-white transition-all duration-300 ease-linear group hover:bg-[#ffcc00] py-2 px-1"
+              href="#"
+            >
+              <!--nav icon container start-->
+              <div class="w-[30px] h-[30px]">
+                <img
+                  class="w-full h-full object-cover"
+                  src="./assets/maxDispo-Cy4gswYu.png"
+                  alt="Dispo"
+                />
+              </div>
+              <!--nav icon container end-->
+              <!--nav link anchor start-->
+              <p
+                class="text-[12px] text-black font-[700] transition-all duration-300 ease-linear group-hover:text-white"
+              >
+                Max Dispo
+              </p>
+              <!--nav link anchor end-->
+            </a>
+            <!--nav link end-->
+          </div>
+          <!-- #endregion nav section-->
+        </nav>
+        <!-- #endregion nav-->
+      </div>
+      <!-- #endregion sidebar-->
+
+      <!-- #region main-content -->
+      <div
+        class="pt-[70px] pl-[178px] pr-[8px] md:pt-[55px] md:pr-[24px] bg-[#f7f9fb] md:pl-[194px]"
+      >
+        <!-- #region header heading -->
+        <!-- mb-[40px]-->
+        <div
+          class="flex justify-center items-center flex-col flex-wrap mb-4 md:mb-0"
+        >
+          <h1
+            class="text-center text-[18px] font-[700] text-[#ffcc00] md:text-[18px]"
+          >
+            Fix And Flip
+          </h1>
+          <h2 class="text-center text-[16px] text-[#1d2939]">
+            Wholesale Calculator
+          </h2>
+        </div>
+        <!-- #endregion header heading -->
+        <!-- #region tutorial --><!--mb-[30px] ml-[12px] md:ml-[24px]-->
+        <div class="w-[100px] flex justify-between items-center">
+          <button
+            class="w-[20px] h-[20px] transition-all duration-100 ease-linear flex items-center justify-center outline-2 outline-black rounded-full outline-offset-2 cursor-pointer hover:outline-offset-4"
+          >
+            <img
+              class="w-[80%] h-[80%] object-cover"
+              src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20576%20512'%3e%3c!--!%20Font%20Awesome%20Pro%206.5.2%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license%20(Commercial%20License)%20Copyright%202024%20Fonticons,%20Inc.%20--%3e%3cpath%20d='M0%20128C0%2092.7%2028.7%2064%2064%2064H320c35.3%200%2064%2028.7%2064%2064V384c0%2035.3-28.7%2064-64%2064H64c-35.3%200-64-28.7-64-64V128zM559.1%2099.8c10.4%205.6%2016.9%2016.4%2016.9%2028.2V384c0%2011.8-6.5%2022.6-16.9%2028.2s-23%205-32.9-1.6l-96-64L416%20337.1V320%20192%20174.9l14.2-9.5%2096-64c9.8-6.5%2022.4-7.2%2032.9-1.6z'/%3e%3c/svg%3e"
+              alt="video"
+            />
+          </button>
+
+          <p class="text-[16px] font-bold capitalize text-[#1d2939]">
+            tutorial
+          </p>
+        </div>
+        <!--endregion tutorial -->
+
+        <!-- #region single family -->
+        <div
+          id="single-family "
+          class="tab-content bg-[#fafafa] pt-4 rounded-[6px] my-0 mx-[16px] md:mx-[24px] active"
+        >
+          <!-- #region form -->
+
+          <form class="w-full">
+            <!-- #region property information -->
+            <fieldset class="section-card mb-[16px]">
+              <legend class="text-left mb-[16px] w-full text-[16px]">
+                Property Information
+              </legend>
+
+              <div class="form-group mb-[16px]">
+                <label
+                  class="block text-[10px] text-[#344054] mb-[6px]"
+                  for="address"
+                  >Address</label
+                >
+                <input
+                  class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                  type="text"
+                  id="address"
+                  name="address"
+                  required
+                />
+              </div>
+              <div
+                class="property-info-row tight-row flex flex-col flex-wrap md:gap-[20px] md:flex-row"
+              >
+                <div class="form-group mb-[16px]">
+                  <label
+                    for="price"
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    >Seller's Price</label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="price"
+                    name="price"
+                    required
+                  />
+                </div>
+                <div class="form-group mb-[16px]">
+                  <label
+                    for="arv"
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    >ARV <span class="text-[#f6c107]">*</span></label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="arv"
+                    name="arv"
+                    required
+                  />
+                </div>
+              </div>
+              <div
+                class="property-info-container flex flex-col gap-[24px] md:flex-row w-full md:flex-wrap"
+              >
+                <div class="location-estimator flex-1">
+                  <fieldset class="inner-card">
+                    <legend class="text-left mb-[16px] w-full text-[16px]">
+                      Location Estimator
+                    </legend>
+                    <div class="location-group flex gap-[16px] mb-[16px]">
+                      <label
+                        class="flex flex-col items-center text-[10px] text-[#344054]"
+                      >
+                        Bad Area
+                        <input
+                          class="mb-[8px] appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] mr-[8px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                          type="checkbox"
+                          id="badArea"
+                          name="locationCondition"
+                          value="bad_area"
+                        />
+                      </label>
+                      <label
+                        class="flex flex-col items-center text-[10px] text-[#344054]"
+                      >
+                        Good Area
+                        <input
+                          class="mb-[8px] appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] mr-[8px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                          type="checkbox"
+                          id="goodArea"
+                          name="locationCondition"
+                          value="good_area"
+                        />
+                      </label>
+                      <label
+                        class="flex flex-col items-center text-[10px] text-[#344054]"
+                      >
+                        Best Area
+                        <input
+                          class="mb-[8px] appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] mr-[8px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                          type="checkbox"
+                          id="bestArea"
+                          name="locationCondition"
+                          value="best_area"
+                        />
+                      </label>
+                    </div>
+                    <div class="form-group mb-[16px]">
+                      <label
+                        class="block text-[10px] text-[#344054] mb-[6px]"
+                        for="percentArv"
+                        >% of ARV <span class="text-[#f6c107]">*</span></label
+                      >
+                      <div
+                        class="percent-input-wrapper relative inline-block w-full max-w-[100px]"
+                      >
+                        <input
+                          class="w-full md:w-[200px] max-w-[400px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107]"
+                          type="number"
+                          id="percentArv"
+                          name="percentArv"
+                          step="0.5"
+                          min="0"
+                          max="100"
+                        />
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div class="market-condition flex-1">
+                  <!-- #region inner-card-->
+                  <fieldset class="inner-card mb-[16px]">
+                    <legend class="text-left mb-[16px] w-full text-[16px]">
+                      Market Condition
+                    </legend>
+                    <div class="form-group mb-[16px]">
+                      <input
+                        type="range"
+                        id="marketCondition"
+                        name="marketCondition"
+                        min="0"
+                        max="600"
+                        value="300"
+                        class="w-full md:w-[300px] h-[6px] bg-[#e4e7ec] rounded-[5px] outline-none appearance-none"
+                      />
+                    </div>
+                    <div
+                      class="emoji-container flex justify-between w-full md:w-[300px] mt-[8px] items-center text-[18px]"
+                    >
+                      <img
+                        src="images/4.png"
+                        class="w-[30px] h-[30px] object-cover md:w-[40px] md:h-[40px]"
+                        alt="Cold Market"
+                      />
+                      <img
+                        src="images/5.png"
+                        class="w-[30px] h-[30px] object-cover md:w-[40px] md:h-[40px]"
+                        alt="Neutral Market"
+                      />
+                      <img
+                        src="images/6.png "
+                        class="w-[30px] h-[30px] object-cover md:w-[40px] md:h-[40px]"
+                        alt="Hot Market"
+                      />
+                    </div>
+                    <div
+                      class="emoji-labels flex justify-between w-full md:w-[300px] mt-[4px]"
+                    >
+                      <span class="text-[10px] text-[color: #667085]"
+                        >Cold Market</span
+                      >
+                      <span class="text-[10px] text-[color: #667085]"
+                        >Neutral Market</span
+                      >
+                      <span class="text-[10px] text-[color: #667085]"
+                        >Hot Market</span
+                      >
+                    </div>
+                  </fieldset>
+                  <!-- #endregion inner-card-->
+                </div>
+              </div>
+            </fieldset>
+            <!-- #endregion property information -->
+
+            <!-- #region Repair Estimator-->
+            <fieldset class="section-card mb-[16px] collapsible collapsed">
+              <legend
+                class="text-center w-full text-[16px] cursor-pointer px-[16px] py-[12px] transition-all duration-300 ease-linear hover:bg-[#f1f3f5] border-[1px] border-solid border-[#e4e7ec]"
+              >
+                Repair Estimator
+              </legend>
+              <div class="collapsible-content bg-[#f1f3f5]">
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="sqft"
+                    >Sq Ft</label
+                  >
+                  <input
+                    class="w-full md:w-[200px] max-w-[400px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107]"
+                    type="number"
+                    id="sqft"
+                    name="square_feet"
+                    step="any"
+                  />
+                </div>
+                <div
+                  class="repair-checkbox-group flex flex-row flex-wrap justify-center md:justify-start md:flex-nowrap mb-[16px]"
+                >
+                  <label class="flex flex-col-reverse items-center min-w-[80px]"
+                    ><input
+                      class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                      type="checkbox"
+                      id="smoothSailing"
+                      name="repairCondition"
+                      value="smoothSailing"
+                    /><span class="block text-[10px] text-[#344054] mb-[6px]"
+                      >Turnkey</span
+                    ></label
+                  >
+                  <label class="flex flex-col-reverse items-center min-w-[80px]"
+                    ><input
+                      class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                      type="checkbox"
+                      id="shiverMeetsRepair"
+                      name="repairCondition"
+                      value="shiverMeetsRepair"
+                    /><span class="block text-[10px] text-[#344054] mb-[6px]"
+                      >Light Rehab</span
+                    ></label
+                  >
+                  <label class="flex flex-col-reverse items-center min-w-[80px]"
+                    ><input
+                      class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                      type="checkbox"
+                      id="abandonShip"
+                      name="repairCondition"
+                      value="abandonShip"
+                    /><span class="block text-[10px] text-[#344054] mb-[6px]"
+                      >Medium Rehab</span
+                    ></label
+                  >
+                  <label class="flex flex-col-reverse items-center min-w-[80px]"
+                    ><input
+                      class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                      type="checkbox"
+                      id="burnTheShip"
+                      name="repairCondition"
+                      value="burnTheShip"
+                    /><span class="block text-[10px] text-[#344054] mb-[6px]"
+                      >Heavy Rehab</span
+                    ></label
+                  >
+                </div>
+                <div
+                  class="sub-section p-[16px] bg-[#f9fafb] rounded-[6px] mt-[16px]"
+                >
+                  <div class="flex flex-row flex-wrap md:gap-x-[20px]">
+                    <div class="form-group mb-[16px]">
+                      <label
+                        class="block text-[10px] text-[#344054] mb-[6px]"
+                        for="repairCost"
+                        >Cost / sq ft</label
+                      >
+                      <input
+                        class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                        type="text"
+                        id="repairCost"
+                        name="repairCost"
+                      />
+                    </div>
+                    <div class="form-group mb-[16px]">
+                      <label
+                        for="repairDays"
+                        class="block text-[10px] text-[#344054] mb-[6px]"
+                        >Repair Days</label
+                      >
+                      <input
+                        type="text"
+                        id="repairCost"
+                        name="repairCost"
+                        class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                        type="number"
+                        id="repairDays"
+                        name="repairDays"
+                        step="any"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group mb-[16px]">
+                    <label
+                      for="majorItems"
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      ># of Major Repair Items</label
+                    >
+                    <select
+                      id="majorItems"
+                      name="majorItems"
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none text-[12px]"
+                    >
+                      <option value="0" selected>0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </div>
+                  <div
+                    id="extraField"
+                    class="form-group mb-[16px]"
+                    style="display: none"
+                  >
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="extraValue"
+                      >Cost per Item</label
+                    >
+                    <input
+                      type="text"
+                      id="extraValue"
+                      name="extraValue"
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <!-- #endregion Repair Estimator-->
+            <!-- #region Repairs-->
+            <div class="form-group mb-[16px]">
+              <label
+                for="repairs"
+                class="block text-[10px] text-[#344054] mb-[6px]"
+                >Repairs</label
+              >
+              <input
+                class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                type="text"
+                id="repairs"
+                name="repairs"
+              />
+            </div>
+            <!-- #endregion Repairs-->
+
+            <!-- #region Smart Adjustment-->
+            <fieldset class="section-card mb-[16px] collapsible collapsed">
+              <legend
+                class="text-center w-full text-[16px] cursor-pointer px-[16px] py-[12px] transition-all duration-300 ease-linear hover:bg-[#f1f3f5] border-[1px] border-solid border-[#e4e7ec]"
+              >
+                Smart Adjustments
+              </legend>
+
+              <div class="collapsible-content bg-[#f1f3f5]">
+                <!-- #region smart-adjustments-container-->
+                <div class="smart-adjustments-container block">
+                  <div
+                    class="smart-adjustments-row flex flex-col gap-[16px] md:gap-[24px] md:flex-wrap md:mb-[16px]"
+                  >
+                    <!--md:max-w-[280px]-->
+                    <div class="form-group mb-[16px] max-w-full md:flex-1">
+                      <label class="block text-[10px] text-[#344054] mb-[6px]"
+                        >Traffic / Commercial</label
+                      >
+                      <div
+                        class="repair-checkbox-group flex flex-row flex-wrap justify-center md:justify-start md:flex-nowrap mb-[16px]"
+                      >
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            type="checkbox"
+                            name="trafficCommercial"
+                            value="na"
+                          /><span
+                            class="block text-[10px] text-[#344054] mb-[6px]"
+                            >N/A</span
+                          ></label
+                        >
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="trafficCommercial"
+                            value="backs"
+                          /><span
+                            class="block text-[10px] text-[#344054] mb-[6px]"
+                            >Backs</span
+                          ></label
+                        >
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="trafficCommercial"
+                            value="sides"
+                          /><span
+                            class="block text-[10px] text-[#344054] mb-[6px]"
+                            >Sides</span
+                          ></label
+                        >
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="trafficCommercial"
+                            value="fronts"
+                          /><span
+                            class="block text-[10px] text-[#344054] mb-[6px]"
+                            >Fronts</span
+                          ></label
+                        >
+                      </div>
+                      <div
+                        class="adjustment-group flex items-center gap-[16px] mb-[8px]"
+                      >
+                        <input
+                          class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                          type="text"
+                          id="trafficCommercialAdjustment"
+                          placeholder="$0"
+                          readonly
+                        />
+                      </div>
+                      <div
+                        id="trafficCommercialError"
+                        class="error-message text-[#d92d20] text-[10px] mt-[4px] hidden"
+                      >
+                        Please enter a value for ARV
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="smart-adjustments-row flex flex-col gap-[16px] md:gap-[24px] md:flex-row md:flex-wrap md:mb-[16px]"
+                  >
+                    <div class="form-group mb-[16px] max-w-full md:flex-1">
+                      <label class="block text-[10px] text-[#344054] mb-[6px]"
+                        >Bedroom</label
+                      >
+                      <div
+                        class="adjustment-group flex flex-row flex-wrap justify-center md:justify-start md:flex-nowrap mb-[16px]"
+                      >
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="bedroom"
+                            value="shortage"
+                          />
+                          <span
+                            class="checkbox-text block text-[10px] text-[#344054] mb-[6px]"
+                            >Shortage</span
+                          >
+                        </label>
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="bedroom"
+                            value="additional"
+                          /><span
+                            class="checkbox-text block text-[10px] text-[#344054] mb-[6px]"
+                            >Additional</span
+                          ></label
+                        >
+                        <input
+                          class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed md:self-end"
+                          type="text"
+                          id="bathroomAdjustment"
+                          placeholder="$0"
+                          readonly
+                        />
+                      </div>
+                      <div
+                        id="bathroomError"
+                        class="error-message text-[#d92d20] text-[10px] mt-[4px] hidden"
+                      >
+                        Please enter a value for ARV
+                      </div>
+                    </div>
+                    <div class="form-group mb-[16px] max-w-full md:flex-1">
+                      <label class="block text-[10px] text-[#344054] mb-[6px]"
+                        >Bathroom</label
+                      >
+                      <div
+                        class="adjustment-group flex flex-row flex-wrap justify-center md:justify-start md:flex-nowrap mb-[16px]"
+                      >
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="bathroom"
+                            value="shortage"
+                          />
+                          <span
+                            class="checkbox-text block text-[10px] text-[#344054] mb-[6px]"
+                            >Shortage</span
+                          >
+                        </label>
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="bedroom"
+                            value="additional"
+                          /><span
+                            class="checkbox-text block text-[10px] text-[#344054] mb-[6px]"
+                            >Additional</span
+                          ></label
+                        >
+                        <input
+                          class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed md:self-end"
+                          type="text"
+                          id="bedroomAdjustment"
+                          placeholder="$0"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="smart-adjustments-row flex flex-col gap-[16px] md:gap-[24px] md:flex-row md:flex-wrap md:mb-[16px]"
+                  >
+                    <div class="form-group mb-[16px] max-w-full md:flex-1">
+                      <label class="block text-[10px] text-[#344054] mb-[6px]"
+                        >Garage</label
+                      >
+                      <div
+                        class="adjustment-group flex flex-row flex-wrap justify-center md:justify-start md:flex-nowrap mb-[16px]"
+                      >
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="garage"
+                            value="shortage"
+                          />
+                          <span
+                            class="checkbox-text block text-[10px] text-[#344054] mb-[6px]"
+                            >Shortage</span
+                          >
+                        </label>
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="garage"
+                            value="additional"
+                          /><span
+                            class="checkbox-text block text-[10px] text-[#344054] mb-[6px]"
+                            >Additional</span
+                          ></label
+                        >
+                        <input
+                          class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed md:self-end"
+                          type="text"
+                          id="garageAdjustment"
+                          placeholder="$0"
+                          readonly
+                        />
+                      </div>
+                      <div
+                        id="garageError"
+                        class="error-message text-[#d92d20] text-[10px] mt-[4px] hidden"
+                      >
+                        Please enter a value for ARV
+                      </div>
+                    </div>
+                    <div class="form-group mb-[16px] max-w-full md:flex-1">
+                      <label class="block text-[10px] text-[#344054] mb-[6px]"
+                        >Carport</label
+                      >
+                      <div
+                        class="adjustment-group flex flex-row flex-wrap justify-center md:justify-start md:flex-nowrap mb-[16px]"
+                      >
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="carport"
+                            value="shortage"
+                          />
+                          <span
+                            class="checkbox-text block text-[10px] text-[#344054] mb-[6px]"
+                            >Shortage</span
+                          >
+                        </label>
+                        <label
+                          class="custom-checkbox flex flex-col-reverse items-center min-w-[80px]"
+                          ><input
+                            class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                            type="checkbox"
+                            name="carport"
+                            value="additional"
+                          /><span
+                            class="checkbox-text block text-[10px] text-[#344054] mb-[6px]"
+                            >Additional</span
+                          ></label
+                        >
+                        <input
+                          class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed md:self-end"
+                          type="text"
+                          id="carportAdjustment"
+                          placeholder="$0"
+                          readonly
+                        />
+                      </div>
+                      <div id="carportError" class="error-message">
+                        Please enter a value for ARV
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-[16px] max-w-full md:flex-1">
+                    <label class="block text-[10px] text-[#344054] mb-[6px]"
+                      >Pool</label
+                    >
+                    <div
+                      class="adjustment-group flex flex-row flex-wrap justify-center md:justify-start md:flex-nowrap mb-[16px]"
+                    >
+                      <label
+                        class="custom-checkbox flex flex-col-reverse items-center min-w-[80px] gap-y-2"
+                        ><input
+                          class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                          type="checkbox"
+                          name="pool"
+                          value="shortage"
+                        />
+                        <span
+                          class="checkbox-text block text-[10px] text-[#344054] mb-[6px]"
+                          >Shortage</span
+                        >
+                      </label>
+                      <label
+                        class="custom-checkbox flex flex-col-reverse items-center min-w-[80px] gap-y-2"
+                        ><input
+                          class="appearance-none w-[30px] h-[30px] border-2 border-solid border-[#cacfd2] rounded-[4px] relative cursor-pointer bg-[#ffffff] transition-all duration-300 ease-linear checked:bg-[#f6c107] checked:border-[#f6c107]"
+                          type="checkbox"
+                          name="pool"
+                          value="additional"
+                        /><span
+                          class="checkbox-text block text-[10px] text-[#344054] mb-[6px]"
+                          >Additional</span
+                        ></label
+                      >
+                      <input
+                        class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed md:self-end"
+                        type="text"
+                        id="poolAdjustment"
+                        placeholder="$0"
+                        readonly
+                      />
+                    </div>
+                    <div id="poolError" class="error-message">
+                      Please enter a value for ARV
+                    </div>
+                  </div>
+                </div>
+                <!-- #endregion smart-adjustments-container-->
+
+                <!-- #region adjustment-summary-->
+                <div
+                  class="adjustment-summary flex flex-col gap-[24px] flex-wrap md:flex-row md:mt-[40px]"
+                >
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="totalAdjustment"
+                      >Total Adjustments</label
+                    >
+                    <input
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                      type="text"
+                      id="totalAdjustment"
+                      name="totalAdjustment"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="adjustedArv"
+                      >Adjusted ARV</label
+                    >
+                    <input
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                      type="text"
+                      id="adjustedArv"
+                      name="adjustedArv"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <!-- #endregion adjustment-summary-->
+              </div>
+            </fieldset>
+            <!-- #endregion Smart Adjustment-->
+
+            <!-- #region mao-iao-->
+            <div class="mao-iao-container flex gap-[24px] flex-wrap">
+              <div class="form-group mb-[16px]">
+                <label
+                  class="block text-[10px] text-[#344054] mb-[6px]"
+                  for="mao"
+                  >MAO <span class="text-[#f6c107]">*</span></label
+                >
+                <input
+                  class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                  type="text"
+                  id="mao"
+                  name="mao"
+                  readonly
+                />
+                <div
+                  class="footnote text-[10px] text-[#667085] mt-[4px]"
+                  id="priceFootnote"
+                ></div>
+                <div
+                  class="footnote text-[10px] text-[#667085] mt-[4px]"
+                  id="pricingMessage"
+                ></div>
+              </div>
+              <div class="form-group mb-[16px]">
+                <label
+                  class="block text-[10px] text-[#344054] mb-[6px]"
+                  for="iao"
+                  >X Offer <span class="text-[#f6c107]">*</span></label
+                >
+                <input
+                  class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                  type="text"
+                  id="iao"
+                  name="iao"
+                  readonly
+                />
+              </div>
+            </div>
+            <!-- #endregion mao-iao-->
+
+            <!-- #region Dispo-->
+            <fieldset class="section-card mb-[16px]">
+              <legend class="text-left mb-[16px] w-full text-[16px]">
+                Dispo
+              </legend>
+              <div class="dispo-container flex flex-wrap gap-[24px]">
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="contractedPrice"
+                    >Contracted Price
+                    <span class="text-[#f6c107]">*</span></label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="contractedPrice"
+                    name="contractedPrice"
+                  />
+                </div>
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="investorPrice"
+                    >Investor Price <span class="text-[#f6c107]">*</span></label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="investorPrice"
+                    name="investorPrice"
+                  />
+                </div>
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="assignmentFee"
+                    >Assignment Fee <span class="text-[#f6c107]">*</span></label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="assignmentFee"
+                    name="assignmentFee"
+                    readonly
+                  />
+                </div>
+              </div>
+              <div class="dispo-jv-group flex gap-[24px] flex-wrap">
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="jvSplit"
+                    >JV Split (%)</label
+                  >
+                  <select
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none text-[14px]"
+                    id="jvSplit"
+                    name="jvSplit"
+                  >
+                    <option value="" selected></option>
+                    <option value="100/0">100/0</option>
+                    <option value="90/10">90/10</option>
+                    <option value="80/20">80/20</option>
+                    <option value="70/30">70/30</option>
+                    <option value="60/40">60/40</option>
+                    <option value="50/50">50/50</option>
+                    <option value="40/60">40/60</option>
+                    <option value="30/70">30/70</option>
+                    <option value="20/80">20/80</option>
+                    <option value="10/90">10/90</option>
+                    <option value="0/100">0/100</option>
+                  </select>
+                </div>
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="yourAssignmentFee"
+                    >Net Assignment Fee</label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="yourAssignmentFee"
+                    name="yourAssignmentFee"
+                    readonly
+                  />
+                </div>
+              </div>
+            </fieldset>
+            <!-- #endregion Dispo-->
+
+            <!-- #region fire away Button-->
+            <div class="buttons-section">
+              <button type="button" class="gold-button" id="fireAway">
+                Fire Away
+              </button>
+            </div>
+            <!-- #endregion fire away Button-->
+            <!-- #region CostsSection-->
+            <fieldset
+              id="costsSection"
+              class="section-card mb-[16px] hidden collapsible collapsed"
+            >
+              <legend
+                class="text-center w-full text-[16px] bg-[#f1f3f5] px-[16px] py-[12px] transition-all duration-300 ease-linear hover:bg-[#f1f3f5] border-[1px] border-solid border-[#e4e7ec]"
+              >
+                Costs
+              </legend>
+              <div class="collapsible-content hidden p-[16px] bg-[#f1f3f5]">
+                <div
+                  class="costs-container flex flex-col gap-[24px] flex-wrap md:flex-row"
+                >
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="closingCostsBuyPercent"
+                      >Closing Costs Buy (%)</label
+                    >
+                    <div
+                      class="percent-input-wrapper relative inline-block w-full"
+                    >
+                      <input
+                        class="w-full md:w-[200px] max-w-[400px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107]"
+                        type="number"
+                        id="closingCostsBuyPercent"
+                        name="closingCostsBuyPercent"
+                        step="0.5"
+                        min="0"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="closingCostsSellPercent"
+                      >Closing Costs Buy Sell (%)</label
+                    >
+                    <div
+                      class="percent-input-wrapper relative inline-block w-full"
+                    >
+                      <input
+                        class="w-full md:w-[200px] max-w-[400px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107]"
+                        type="number"
+                        id="closingCostsSellPercent"
+                        name="closingCostsSellPercent"
+                        step="0.5"
+                        min="0"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="closingCostsDollars"
+                      >Closing Costs ($)</label
+                    >
+                    <input
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                      type="text"
+                      id="closingCostsDollars"
+                      name="closingCostsDollars"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="costs-container flex flex-col gap-[24px] flex-wrap md:flex-row"
+                >
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="buyerAgentCommissionPercent"
+                      >Buyer Agent Commission (%)</label
+                    >
+                    <div
+                      class="percent-input-wrapper relative inline-block w-full"
+                    >
+                      <input
+                        class="w-full md:w-[200px] max-w-[400px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107]"
+                        type="number"
+                        id="buyerAgentCommissionPercent"
+                        name="buyerAgentCommissionPercent"
+                        step="0.5"
+                        min="0"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="listingAgentCommissionPercent"
+                      >Listing Agent Commission (%)</label
+                    >
+                    <div
+                      class="percent-input-wrapper relative inline-block w-full"
+                    >
+                      <input
+                        class="w-full md:w-[200px] max-w-[400px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107]"
+                        type="number"
+                        id="listingAgentCommissionPercent"
+                        name="listingAgentCommissionPercent"
+                        step="0.5"
+                        min="0"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group mb-[16px]">
+                    <label
+                      for="agentCommissionsDollars"
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      >Agent Commissions ($)</label
+                    >
+                    <input
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                      type="text"
+                      id="agentCommissionsDollars"
+                      name="agentCommissionsDollars"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="costs-container flex flex-col gap-[24px] flex-wrap md:flex-row"
+                >
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="holdingPeriodDays"
+                      >Holding Period (Days)</label
+                    >
+
+                    <input
+                      class="w-full md:w-[200px] max-w-[400px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107]"
+                      type="number"
+                      id="holdingPeriodDays"
+                      name="holdingPeriodDays"
+                      step="any"
+                    />
+                  </div>
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="holdingCostsDollars"
+                      >Holding Costs ($)</label
+                    >
+                    <input
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                      type="text"
+                      id="holdingCostsDollars"
+                      name="holdingCostsDollars"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="costs-container flex flex-col gap-[24px] flex-wrap md:flex-row"
+                >
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="totalCosts"
+                      >Total Costs</label
+                    >
+                    <input
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                      type="text"
+                      id="totalCosts"
+                      name="totalCosts"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <!-- #endregion CostsSection-->
+
+            <!--#region bootySection-->
+            <fieldset id="bootySection" class="section-card md-[24px] hidden">
+              <legend class="text-left mb-[16px] w-full text-[16px]">
+                Buyer's Booty
+              </legend>
+              <div
+                class="booty-container flex flex-col gap-[24px] flex-wrap md:flex-row"
+              >
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="investorProfit"
+                    >Investor Profit</label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="investorProfit"
+                    name="investorProfit"
+                    readonly
+                  />
+                </div>
+              </div>
+              <div
+                class="booty-container flex flex-col gap-[24px] flex-wrap md:flex-row"
+              >
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="bootyMonthlyProfit"
+                    >Monthly Profit</label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="bootyMonthlyProfit"
+                    name="bootyMonthlyProfit"
+                    readonly
+                  />
+                </div>
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="bootyRoi"
+                    >ROI</label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="bootyRoi"
+                    name="bootyRoi"
+                    readonly
+                  />
+                </div>
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="bootyRjRatio"
+                    >RJ Ratio</label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="bootyRjRatio"
+                    name="bootyRjRatio"
+                    readonly
+                  />
+                </div>
+              </div>
+            </fieldset>
+            <!--#endregion bootySection-->
+
+            <!-- #region profitSection-->
+            <fieldset
+              id="profitSection"
+              class="section-card mb-[16px] hidden collapsible collapsed"
+            >
+              <legend
+                class="text-center w-full text-[16px] bg-[#f1f3f5] px-[16px] py-[12px] transition-all duration-300 ease-linear hover:bg-[#f1f3f5] border-[1px] border-solid border-[#e4e7ec]"
+              >
+                Pre-Assignment Profit
+              </legend>
+              <div class="collapsible-content bg-[#f1f3f5]">
+                <div
+                  class="pre-assignment-profit-container flex flex-col gap-[24px] flex-wrap md:flex-row"
+                >
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="preAssignmentProfit"
+                      >Profit</label
+                    >
+                    <input
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                      type="text"
+                      id="preAssignmentProfit"
+                      name="preAssignmentProfit"
+                      readonly
+                    />
+                  </div>
+                </div>
+                <div
+                  class="pre-assignment-profit-container flex flex-col gap-[24px] flex-wrap md:flex-row"
+                >
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="preAssignmentMonthlyProfit"
+                      >Monthly Profit</label
+                    >
+                    <input
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                      type="text"
+                      id="preAssignmentMonthlyProfit"
+                      name="preAssignmentMonthlyProfit"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group mb-[16px]">
+                    <label
+                      for="preAssignmentRoi"
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      >ROI</label
+                    >
+                    <input
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                      type="text"
+                      id="preAssignmentRoi"
+                      name="preAssignmentRoi"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group mb-[16px]">
+                    <label
+                      class="block text-[10px] text-[#344054] mb-[6px]"
+                      for="preAssignmentRjRatio"
+                      >RJ Ratio</label
+                    >
+                    <input
+                      class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                      type="text"
+                      id="preAssignmentRjRatio"
+                      name="preAssignmentRjRatio"
+                      readonly
+                    />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <!-- #endregion profitSection-->
+            <!-- #region cashScorecard-->
+            <div id="cashScorecard" class="section-card mb-[16px]">
+              <legend class="text-left mb-[16px] w-full text-[16px]">
+                Cash Scorecard
+              </legend>
+              <div
+                class="cash-scorecard-container flex flex-col gap-[24px] flex-wrap md:flex-row"
+              >
+                <div class="form-group mb-[16px]">
+                  <label
+                    class="block text-[10px] text-[#344054] mb-[6px]"
+                    for="fixAndFlipScore"
+                    >Fix and Flip Score</label
+                  >
+                  <input
+                    class="w-full md:w-[200px] px-[12px] py-[10px] border-[1px] border-solid border-[#d0d5dd] read-only:bg-[#fbf0c7] rounded-[6px] bg-[#ffffff] transition-all duration-300 ease-linear shadow-sm focus:outline-none focus:border-[#f6c107] focus:shadow-sm focus:shadow-[#f6c107] cursor-text appearance-none read-only:cursor-not-allowed"
+                    type="text"
+                    id="fixAndFlipScore"
+                    name="fixAndFlipScore"
+                    readonly
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- #endregion cashScorecard-->
+          </form>
+
+          <!-- #endregion form -->
+        </div>
+        <!-- #endregion single family -->
+      </div>
+      <!-- #endregion main-content -->
+    </div>
+    <!-- #endregion wrapper -->
+
+      <script>
+        let userHasInteracted = false;
+        const dependentFields = [
+            'repairs', 'arv', 'percentArv', 'price', 'investorPrice',
+            'closingCostsBuyPercent', 'closingCostsSellPercent',
+            'buyerAgentCommissionPercent', 'listingAgentCommissionPercent',
+            'holdingPeriodDays', 'sqft', 'repairCost', 'extraValue',
+            'trafficCommercialAdjustment', 'bedroomAdjustment',
+            'bathroomAdjustment', 'garageAdjustment', 'carportAdjustment',
+            'poolAdjustment'
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                console.log('DOM loaded, initializing form...');
+                initializeForm();
+                const collapsibleLegends = document.querySelectorAll('fieldset.collapsible legend');
+                collapsibleLegends.forEach(legend => {
+                    legend.addEventListener('click', handleCollapsibleClick);
+                });
+                const fireAwayButton = document.getElementById('fireAway');
+                if (fireAwayButton) {
+                    console.log('Attaching event listener to Fire Away button');
+                    fireAwayButton.addEventListener('click', handleFireAwayClick);
+                } else {
+                    console.error('Fire Away button not found');
+                }
+                setupInputListeners();
+            } catch (error) {
+                console.error('Error in DOMContentLoaded:', error);
+            }
+        });
+
+        function initializeForm() {
+            try {
+                console.log('Initializing form...');
+                const allInputs = document.querySelectorAll('input[type="text"], input[type="number"], select');
+                allInputs.forEach(input => {
+                    if (input.type === 'number' || input.type === 'text') {
+                        input.value = '';
+                    } else if (input.tagName === 'SELECT') {
+                        input.selectedIndex = 0;
+                    }
+                    input.classList.remove('positive', 'midrange', 'negative', 'blank');
+                    input.dataset.manuallyEdited = 'false';
+                });
+                // Set default values for percentage fields
+                const percentFields = [
+                    'closingCostsBuyPercent', 'closingCostsSellPercent',
+                    'buyerAgentCommissionPercent', 'listingAgentCommissionPercent'
+                ];
+                document.getElementById('closingCostsBuyPercent').value = '2';
+                document.getElementById('closingCostsSellPercent').value = '2';
+                document.getElementById('buyerAgentCommissionPercent').value = '3';
+                document.getElementById('listingAgentCommissionPercent').value = '3';
+                percentFields.forEach(id => {
+                    const input = document.getElementById(id);
+                    const value = parseFloat(input.value);
+                    if (!isNaN(value)) {
+                        input.value = value % 1 === 0 ? value.toString() : value.toFixed(1);
+                    }
+                });
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(cb => cb.checked = false);
+                document.getElementById('extraField').style.display = 'none';
+                const collapsibleFieldsets = document.querySelectorAll('fieldset.collapsible');
+                collapsibleFieldsets.forEach(fieldset => {
+                    fieldset.classList.add('collapsed');
+                    const content = fieldset.querySelector('.collapsible-content');
+                    if (content) content.style.display = 'none';
+                });
+                ['costsSection', 'bootySection', 'profitSection'].forEach(id => {
+                    const section = document.getElementById(id);
+                    if (section) section.classList.add('hidden');
+                });
+                const pricingMessageDiv = document.getElementById('pricingMessage');
+                if (pricingMessageDiv) {
+                    pricingMessageDiv.textContent = '';
+                    pricingMessageDiv.style.color = '#667085';
+                }
+                userHasInteracted = false;
+                const scoreField = document.getElementById('fixAndFlipScore');
+                if (scoreField) {
+                    scoreField.value = '';
+                }
+                // Initialize error messages to be hidden
+                const errorFields = document.querySelectorAll('.error-message');
+                errorFields.forEach(error => error.style.display = 'none');
+            } catch (error) {
+                console.error('Error in initializeForm:', error);
+            }
+        }
+
+        function handleCollapsibleClick(event) {
+            try {
+                const legend = event.currentTarget;
+                const fieldset = legend.closest('fieldset.collapsible');
+                if (fieldset) toggleCollapse(fieldset);
+            } catch (error) {
+                console.error('Error in handleCollapsibleClick:', error);
+            }
+        }
+
+        function toggleCollapse(fieldset) {
+            try {
+                if (fieldset.classList.contains('collapsible')) {
+                    const isCollapsed = fieldset.classList.toggle('collapsed');
+                    const content = fieldset.querySelector('.collapsible-content');
+                    if (content) {
+                        content.style.display = isCollapsed ? 'none' : 'block';
+                        console.log(`Toggled section ${fieldset.querySelector('legend').textContent}: ${isCollapsed ? 'Collapsed' : 'Expanded'}`);
+                    }
+                }
+            } catch (error) {
+                console.error('Error in toggleCollapse:', error);
+            }
+        }
+
+        function handleFireAwayClick(event) {
+            try {
+                event.preventDefault(); // Prevent any default form submission
+                console.log('Fire Away button clicked');
+                handleFireAway();
+            } catch (error) {
+                console.error('Error in handleFireAwayClick:', error);
+            }
+        }
+
+        function handleFireAway() {
+            try {
+                console.log('Handling Fire Away...');
+                userHasInteracted = true; // Ensure userHasInteracted is set
+                console.log('userHasInteracted set to true');
+                toggleHiddenSections();
+                updateAllFields(true);
+                console.log('Fire Away completed');
+            } catch (error) {
+                console.error('Error in handleFireAway:', error);
+            }
+        }
+
+        function toggleHiddenSections() {
+            try {
+                console.log('Toggling hidden sections...');
+                const sections = ['costsSection', 'bootySection', 'profitSection'];
+                sections.forEach(id => {
+                    const section = document.getElementById(id);
+                    if (section) {
+                        console.log(`Unhiding section: ${id}`);
+                        section.classList.remove('hidden');
+                        section.style.display = 'block'; // Explicitly set display to block
+                        if (section.classList.contains('collapsible') && section.classList.contains('collapsed')) {
+                            console.log(`Expanding collapsible section: ${id}`);
+                            section.classList.remove('collapsed');
+                            const content = section.querySelector('.collapsible-content');
+                            if (content) {
+                                content.style.display = 'block';
+                                console.log(`Collapsible content for ${id} set to display: block`);
+                            }
+                        }
+                    } else {
+                        console.warn(`Section ${id} not found`);
+                    }
+                });
+            } catch (error) {
+                console.error('Error in toggleHiddenSections:', error);
+            }
+        }
+
+        function setupInputListeners() {
+            try {
+                const monetaryFields = [
+                    'price', 'arv', 'repairs', 'assignmentFee', 'contractedPrice',
+                    'investorPrice', 'mao', 'yourAssignmentFee', 'iao',
+                    'adjustedArv', 'totalAdjustment', 'closingCostsDollars',
+                    'agentCommissionsDollars', 'holdingCostsDollars', 'totalCosts',
+                    'investorProfit', 'bootyMonthlyProfit', 'preAssignmentProfit',
+                    'trafficCommercialAdjustment', 'bedroomAdjustment',
+                    'bathroomAdjustment', 'garageAdjustment', 'carportAdjustment', 'poolAdjustment',
+                    'extraValue'
+                ];
+                monetaryFields.forEach(id => {
+                    const input = document.getElementById(id);
+                    if (input && !input.hasAttribute('readonly')) {
+                        input.addEventListener('input', () => {
+                            userHasInteracted = true;
+                            let value = input.value.replace(/[$,]/g, '');
+                            if (!isNaN(value) && value !== '') {
+                                value = parseFloat(value);
+                                input.value = formatCurrency(value);
+                            } else {
+                                input.value = '';
+                            }
+                            input.dataset.manuallyEdited = 'true';
+                            updateAllFields(dependentFields.includes(id));
+                        });
+                    }
+                });
+
+                const percentFields = [
+                    'closingCostsBuyPercent', 'closingCostsSellPercent',
+                    'buyerAgentCommissionPercent', 'listingAgentCommissionPercent'
+                ];
+                percentFields.forEach(id => {
+                    const input = document.getElementById(id);
+                    if (input) {
+                        input.addEventListener('input', () => {
+                            userHasInteracted = true;
+                            const value = parseFloat(input.value);
+                            if (!isNaN(value)) {
+                                input.value = value % 1 === 0 ? value.toString() : value.toFixed(1);
+                            }
+                            input.dataset.manuallyEdited = 'true';
+                            updateAllFields(true);
+                        });
+                    }
+                });
+
+                const inputsToTrack = [
+                    'repairs', 'investorPrice', 'contractedPrice',
+                    'closingCostsDollars', 'agentCommissionsDollars', 'holdingCostsDollars',
+                    'trafficCommercialAdjustment', 'bedroomAdjustment',
+                    'bathroomAdjustment', 'garageAdjustment', 'carportAdjustment', 'poolAdjustment',
+                    'holdingPeriodDays', 'extraValue', 'sqft', 'repairCost'
+                ];
+                inputsToTrack.forEach(id => {
+                    const input = document.getElementById(id);
+                    if (input) {
+                        input.addEventListener('input', () => {
+                            userHasInteracted = true;
+                            input.dataset.manuallyEdited = 'true';
+                            updateAllFields(dependentFields.includes(id));
+                        });
+                    }
+                });
+
+                const formInputs = document.querySelectorAll('input:not([type="checkbox"]):not([id="repairs"]):not([id="contractedPrice"]):not([id="mao"]):not([id="assignmentFee"]):not([id="arv"]):not([id="percentArv"]):not([id="price"]):not([id="closingCostsBuyPercent"]):not([id="closingCostsSellPercent"]):not([id="buyerAgentCommissionPercent"]):not([id="listingAgentCommissionPercent"]):not([id="holdingCostsDollars"]):not([id="closingCostsDollars"]):not([id="agentCommissionsDollars"]):not([id="sqft"]):not([id="repairCost"]):not([id="trafficCommercialAdjustment"]):not([id="bedroomAdjustment"]):not([id="bathroomAdjustment"]):not([id="garageAdjustment"]):not([id="carportAdjustment"]):not([id="poolAdjustment"]):not([id="holdingPeriodDays"]):not([id="extraValue"]):not([id="investorProfit"]):not([id="bootyMonthlyProfit"]):not([id="bootyRoi"]):not([id="bootyRjRatio"]):not([id="preAssignmentProfit"]):not([id="preAssignmentMonthlyProfit"]):not([id="preAssignmentRoi"]):not([id="preAssignmentRjRatio"]):not([id="totalCosts"]):not([id="adjustedArv"]):not([id="totalAdjustment"]):not([id="iao"]):not([id="yourAssignmentFee"]), select:not([id="jvSplit"]):not([id="majorItems"])');
+                formInputs.forEach(input => {
+                    input.addEventListener('input', () => {
+                        userHasInteracted = true;
+                        updateAllFields(false);
+                    });
+                });
+
+                // Listener for percentArv
+                const percentArvInput = document.getElementById('percentArv');
+                if (percentArvInput) {
+                    percentArvInput.addEventListener('input', () => {
+                        userHasInteracted = true;
+                        percentArvInput.dataset.manuallyEdited = 'true'; // Mark as manually edited
+                        updateAllFields(true);
+                    });
+                }
+
+                // In setupInputListeners
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', () => {
+                        userHasInteracted = true;
+                        if (checkbox.name === 'locationCondition') {
+                            updateLocationEstimate(checkbox);
+                            updateAllFields(true);
+                        } else if (checkbox.name === 'repairCondition') {
+                            updateRepairEstimates(checkbox);
+                            updateAllFields(true);
+                        } else {
+                            updateSmartAdjustments(checkbox);
+                            updateAllFields(true);
+                        }
+                    });
+                });
+
+                const marketConditionInput = document.getElementById('marketCondition');
+                if (marketConditionInput) {
+                    marketConditionInput.addEventListener('input', () => {
+                        userHasInteracted = true;
+                        updateLocationEstimate(null);
+                        updateAllFields(true);
+                    });
+                }
+
+                const majorItemsInput = document.getElementById('majorItems');
+                if (majorItemsInput) {
+                    majorItemsInput.addEventListener('change', () => {
+                        userHasInteracted = true;
+                        const majorItems = parseInt(majorItemsInput.value) || 0;
+                        const extraField = document.getElementById('extraField');
+                        const extraValueInput = document.getElementById('extraValue');
+                        extraField.style.display = majorItems > 0 ? 'block' : 'none';
+                        if (majorItems > 0 && (!extraValueInput.dataset.manuallyEdited || extraValueInput.dataset.manuallyEdited === 'false')) {
+                            extraValueInput.value = formatCurrency(10000);
+                            extraValueInput.dataset.manuallyEdited = 'false';
+                        } else if (majorItems === 0) {
+                            extraValueInput.value = '';
+                            extraValueInput.dataset.manuallyEdited = 'false';
+                        }
+                        updateRepairs();
+                        updateAllFields(true);
+                    });
+                }
+
+                const jvSplitInput = document.getElementById('jvSplit');
+                if (jvSplitInput) {
+                    jvSplitInput.addEventListener('change', () => {
+                        userHasInteracted = true;
+                        updateYourAssignmentFee();
+                        updateAllFields(true);
+                    });
+                }
+            } catch (error) {
+                console.error('Error in setupInputListeners:', error);
+            }
+        }
+
+        function updatePricingMessage() {
+            try {
+                if (!userHasInteracted) return;
+                const price = parseFloat(document.getElementById('price').value.replace(/[$,]/g, '')) || 0;
+                const mao = parseFloat(document.getElementById('mao').value.replace(/[$,]/g, '')) || 0;
+                const pricingMessageDiv = document.getElementById('pricingMessage');
+                pricingMessageDiv.textContent = '';
+                pricingMessageDiv.style.color = '#667085';
+                if (mao === 0 || isNaN(price) || isNaN(mao)) return;
+                if (mao === price) {
+                    pricingMessageDiv.textContent = 'Property is Fairly Priced';
+                    pricingMessageDiv.style.color = '#1D2939';
+                } else if (mao > price) {
+                    const diffPercent = Math.abs((price - mao) / mao);
+                    pricingMessageDiv.textContent = `Property is Underpriced by ${(diffPercent * 100).toFixed(2)}%`;
+                    pricingMessageDiv.style.color = '#027A48';
+                } else {
+                    const diffPercent = (price - mao) / mao;
+                    pricingMessageDiv.textContent = `Property is Overpriced by ${(diffPercent * 100).toFixed(2)}%`;
+                    pricingMessageDiv.style.color = '#D92D20';
+                }
+            } catch (error) {
+                console.error('Error in updatePricingMessage:', error);
+            }
+        }
+
+        function formatCurrency(value) {
+            try {
+                if (isNaN(value) || value === null) return '';
+                if (value === 0) return '$0';
+                const absValue = Math.abs(value);
+                const formatted = `$${absValue.toLocaleString()}`;
+                return value < 0 ? `-${formatted}` : formatted;
+            } catch (error) {
+                console.error('Error in formatCurrency:', error);
+                return '';
+            }
+        }
+
+        function applyConditionalFormatting(input, value) {
+            try {
+                if (!userHasInteracted) return;
+                const allowedFields = [
+                    'bootyMonthlyProfit', 'bootyRoi', 'bootyRjRatio',
+                    'preAssignmentMonthlyProfit', 'preAssignmentRoi', 'preAssignmentRjRatio'
+                ];
+                if (!allowedFields.includes(input.id)) return;
+                input.classList.remove('positive', 'midrange', 'negative', 'blank');
+                if (value === '' || isNaN(value)) {
+                    input.classList.add('blank');
+                    return;
+                }
+                if (input.id === 'bootyMonthlyProfit' || input.id === 'preAssignmentMonthlyProfit') {
+                    if (value > 10000) input.classList.add('positive'); // Green: #D4EDDA
+                    else if (value >= 5000 && value <= 10000) input.classList.add('midrange'); // Gray: #E2E3E5
+                    else input.classList.add('negative'); // Red: #F8D7DA
+                } else if (input.id === 'bootyRoi' || input.id === 'preAssignmentRoi') {
+                    if (value > 20) input.classList.add('positive'); // Green: #D4EDDA
+                    else if (value >= 10 && value <= 20) input.classList.add('midrange'); // Gray: #E2E3E5
+                    else input.classList.add('negative'); // Red: #F8D7DA
+                } else if (input.id === 'bootyRjRatio' || input.id === 'preAssignmentRjRatio') {
+                    if (value > 80) input.classList.add('positive'); // Green: #D4EDDA
+                    else if (value >= 50 && value <= 80) input.classList.add('midrange'); // Gray: #E2E3E5
+                    else input.classList.add('negative'); // Red: #F8D7DA
+                }
+            } catch (error) {
+                console.error('Error in applyConditionalFormatting:', error);
+            }
+        }
+
+        function updateAllFields(dependentFieldChanged = false) {
+            try {
+                if (!userHasInteracted) {
+                    console.log('User has not interacted, skipping updateAllFields');
+                    return;
+                }
+                console.log('Updating all fields...');
+                updateRepairs();
+                updateSmartAdjustments(null);
+                updateTotalAdjustment();
+                updateAdjustedARV();
+                updateMAO();
+                updateXOffer();
+                updateDispoFields();
+                updateYourAssignmentFee();
+                updateClosingCosts();
+                updateAllCalculations();
+                updateFixAndFlipScore();
+                updatePricingMessage();
+                console.log('All fields updated');
+            } catch (error) {
+                console.error('Error in updateAllFields:', error);
+            }
+        }
+
+        function updateLocationEstimate(checkbox) {
+            try {
+                const checkboxes = document.querySelectorAll('input[name="locationCondition"]');
+                const percentArv = document.getElementById('percentArv');
+                const marketCondition = parseInt(document.getElementById('marketCondition').value) || 0;
+                let basePercent = 0;
+                let checkedValue = '';
+
+                checkboxes.forEach(cb => {
+                    if (cb.checked) checkedValue = cb.value;
+                });
+
+                if (checkbox) {
+                    checkboxes.forEach(cb => {
+                        if (cb !== checkbox) cb.checked = false;
+                    });
+                    checkedValue = checkbox.checked ? checkbox.value : '';
+                }
+
+                if (checkedValue) {
+                    switch (checkedValue) {
+                        case 'bad_area':
+                            basePercent = 65;
+                            break;
+                        case 'good_area':
+                            basePercent = 70;
+                            break;
+                        case 'best_area':
+                            basePercent = 75;
+                            break;
+                    }
+                    
+                    if (marketCondition === 0) basePercent -= 5;
+                    else if (marketCondition === 100) basePercent += 5;
+                }
+
+                percentArv.value = checkedValue ? basePercent : '';
+            } catch (error) {
+                console.error('Error in updateLocationEstimate:', error);
+            }
+        }
+
+        function updateRepairEstimates(checkbox) {
+            try {
+                const checkboxes = document.querySelectorAll('input[name="repairCondition"]');
+                const repairCost = document.getElementById('repairCost');
+                const repairDays = document.getElementById('repairDays');
+                const holdingPeriodDays = document.getElementById('holdingPeriodDays');
+                const repairsInput = document.getElementById('repairs');
+                checkboxes.forEach(cb => {
+                    if (cb !== checkbox) cb.checked = false;
+                });
+                if (checkbox.checked) {
+                    switch (checkbox.value) {
+                        case 'smoothSailing':
+                            repairCost.value = '$0';
+                            repairDays.value = '';
+                            if (holdingPeriodDays.dataset.manuallyEdited !== 'true') {
+                                holdingPeriodDays.value = '90';
+                                holdingPeriodDays.dataset.manuallyEdited = 'false';
+                            }
+                            break;
+                        case 'shiverMeetsRepair':
+                            repairCost.value = '$20';
+                            repairDays.value = '15';
+                            if (holdingPeriodDays.dataset.manuallyEdited !== 'true') {
+                                holdingPeriodDays.value = '105';
+                                holdingPeriodDays.dataset.manuallyEdited = 'false';
+                            }
+                            break;
+                        case 'abandonShip':
+                            repairCost.value = '$35';
+                            repairDays.value = '30';
+                            if (holdingPeriodDays.dataset.manuallyEdited !== 'true') {
+                                holdingPeriodDays.value = '120';
+                                holdingPeriodDays.dataset.manuallyEdited = 'false';
+                            }
+                            break;
+                        case 'burnTheShip':
+                            repairCost.value = '$50';
+                            repairDays.value = '90';
+                            if (holdingPeriodDays.dataset.manuallyEdited !== 'true') {
+                                holdingPeriodDays.value = '180';
+                                holdingPeriodDays.dataset.manuallyEdited = 'false';
+                            }
+                            break;
+                    }
+                } else {
+                    repairCost.value = '';
+                    repairDays.value = '';
+                    if (holdingPeriodDays.dataset.manuallyEdited !== 'true') {
+                        holdingPeriodDays.value = '';
+                        holdingPeriodDays.dataset.manuallyEdited = 'false';
+                    }
+                }
+                if (!repairsInput.dataset.manuallyEdited || repairsInput.dataset.manuallyEdited === 'false') {
+                    repairsInput.dataset.manuallyEdited = 'false';
+                    updateRepairs();
+                }
+            } catch (error) {
+                console.error('Error in updateRepairEstimates:', error);
+            }
+        }
+
+        function updateRepairs() {
+            try {
+                const repairsInput = document.getElementById('repairs');
+                const sqft = parseFloat(document.getElementById('sqft').value) || 0;
+                const repairCostInput = document.getElementById('repairCost');
+                const majorItems = parseInt(document.getElementById('majorItems').value) || 0;
+                const extraValueInput = document.getElementById('extraValue');
+                const extraValue = parseFloat(extraValueInput.value.replace(/[$,]/g, '')) || 0;
+                if (repairsInput.dataset.manuallyEdited === 'true') return;
+                let costPerSquareFoot = 0;
+                const repairCostValue = repairCostInput.value.replace('$', '').trim();
+                if (repairCostValue) costPerSquareFoot = parseFloat(repairCostValue) || 0;
+                if (sqft > 0) {
+                    const totalRepairs = Math.ceil((costPerSquareFoot * sqft) + (majorItems * extraValue));
+                    repairsInput.value = formatCurrency(totalRepairs);
+                    repairsInput.dataset.manuallyEdited = 'false';
+                } else {
+                    repairsInput.value = '';
+                }
+            } catch (error) {
+                console.error('Error in updateRepairs:', error);
+            }
+        }
+
+        function updateSmartAdjustments(checkbox) {
+            try {
+                const arv = parseFloat(document.getElementById('arv').value.replace(/[$,]/g, '')) || 0;
+                const adjustments = ['trafficCommercial', 'bedroom', 'bathroom', 'garage', 'carport', 'pool'];
+                adjustments.forEach(groupName => {
+                    const adjustmentField = document.getElementById(`${groupName}Adjustment`);
+                    const errorField = document.getElementById(`${groupName}Error`);
+                    const checkboxes = document.querySelectorAll(`input[name="${groupName}"]`);
+                    let checkedCheckbox = document.querySelector(`input[name="${groupName}"]:checked`);
+
+                    // Handle checkbox interaction
+                    if (checkbox && checkbox.name === groupName) {
+                        // Uncheck other checkboxes in the same group
+                        checkboxes.forEach(sibling => {
+                            if (sibling !== checkbox) sibling.checked = false;
+                        });
+                        checkedCheckbox = checkbox.checked ? checkbox : null;
+                    }
+
+                    // Check if any checkbox is checked in the group
+                    const isAnyChecked = !!checkedCheckbox;
+
+                    // If ARV is 0 and a checkbox is checked, show error and allow unchecking
+                    if (!arv && isAnyChecked) {
+                        errorField.style.display = 'block';
+                        adjustmentField.value = '';
+                        checkboxes.forEach(cb => cb.disabled = false); // Ensure checkboxes are interactive
+                        return;
+                    } else if (!arv && !isAnyChecked) {
+                        // Hide error if no checkboxes are checked
+                        errorField.style.display = 'none';
+                        adjustmentField.value = '';
+                        checkboxes.forEach(cb => cb.disabled = false);
+                        return;
+                    } else {
+                        // Hide error if ARV is valid
+                        errorField.style.display = 'none';
+                        checkboxes.forEach(cb => cb.disabled = false);
+                    }
+
+                    // Calculate adjustment if ARV is valid and a checkbox is checked
+                    if (checkedCheckbox && arv) {
+                        let value = 0;
+                        switch (groupName) {
+                            case 'trafficCommercial':
+                                switch (checkedCheckbox.value) {
+                                    case 'backs': value = arv <= 500000 ? -10000 : -(arv * 0.10); break;
+                                    case 'fronts': value = arv <= 500000 ? -20000 : -(arv * 0.20); break;
+                                    case 'sides': value = arv <= 500000 ? -15000 : -(arv * 0.15); break;
+                                    case 'na': value = 0; break;
+                                }
+                                break;
+                            case 'bedroom':
+                                value = checkedCheckbox.value === 'shortage' ? -10000 : 10000;
+                                break;
+                            case 'bathroom':
+                                value = checkedCheckbox.value === 'shortage' ? -5000 : 5000;
+                                break;
+                            case 'garage':
+                                value = checkedCheckbox.value === 'shortage' ? -5000 : 5000;
+                                break;
+                            case 'carport':
+                                value = checkedCheckbox.value === 'shortage' ? -2500 : 2500;
+                                break;
+                            case 'pool':
+                                value = checkedCheckbox.value === 'shortage' ? -10000 : 10000;
+                                break;
+                        }
+                        adjustmentField.value = formatCurrency(value);
+                    } else {
+                        adjustmentField.value = '';
+                    }
+                });
+                updateTotalAdjustment();
+            } catch (error) {
+                console.error('Error in updateSmartAdjustments:', error);
+            }
+        }
+
+        function updateTotalAdjustment() {
+            try {
+                const adjustments = [
+                    'trafficCommercialAdjustment', 'bedroomAdjustment',
+                    'bathroomAdjustment', 'garageAdjustment', 'carportAdjustment', 'poolAdjustment'
+                ];
+                let total = 0;
+                adjustments.forEach(id => {
+                    const field = document.getElementById(id);
+                    const valueStr = field.value;
+                    if (valueStr) {
+                        const cleanedValue = valueStr.replace(/[$,]/g, '');
+                        const value = parseFloat(cleanedValue) || 0;
+                        total += value;
+                    }
+                });
+                const totalAdjustmentField = document.getElementById('totalAdjustment');
+                totalAdjustmentField.value = formatCurrency(total);
+                updateAdjustedARV();
+            } catch (error) {
+                console.error('Error in updateTotalAdjustment:', error);
+            }
+        }
+
+        function updateAdjustedARV() {
+            try {
+                const arv = parseFloat(document.getElementById('arv').value.replace(/[$,]/g, '')) || 0;
+                const totalAdjustmentStr = document.getElementById('totalAdjustment').value;
+                let totalAdjustment = 0;
+                if (totalAdjustmentStr) {
+                    const cleanedValue = totalAdjustmentStr.replace(/[$,]/g, '');
+                    totalAdjustment = parseFloat(cleanedValue) || 0;
+                }
+                const adjustedArv = arv + totalAdjustment;
+                document.getElementById('adjustedArv').value = formatCurrency(adjustedArv);
+            } catch (error) {
+                console.error('Error in updateAdjustedARV:', error);
+            }
+        }
+
+        function updateMAO() {
+            try {
+                const adjustedArv = parseFloat(document.getElementById('adjustedArv').value.replace(/[$,]/g, '')) || 0;
+                const percentArv = parseFloat(document.getElementById('percentArv').value) / 100 || 0;
+                const repairs = parseFloat(document.getElementById('repairs').value.replace(/[$,]/g, '')) || 0;
+                const mao = Math.ceil(adjustedArv * percentArv - repairs);
+                document.getElementById('mao').value = formatCurrency(mao);
+            } catch (error) {
+                console.error('Error in updateMAO:', error);
+            }
+        }
+
+        function updateXOffer() {
+            try {
+                const adjustedArv = parseFloat(document.getElementById('adjustedArv').value.replace(/[$,]/g, '')) || 0;
+                const repairs = parseFloat(document.getElementById('repairs').value.replace(/[$,]/g, '')) || 0;
+                console.log('Adjusted ARV:', adjustedArv, 'Repairs:', repairs);
+                let xOffer;
+                if (repairs < 30000) {
+                    xOffer = adjustedArv * 0.9 - (repairs + 30000) - 20000;
+                } else if (repairs > adjustedArv * 0.1) {
+                    xOffer = adjustedArv * 0.9 - ((adjustedArv * 0.1) * 2 + (repairs - adjustedArv * 0.1) * 1.5) - 20000;
+                } else {
+                    xOffer = adjustedArv * 0.9 - (repairs * 2) - 20000;
+                }
+                console.log('Calculated X Offer:', xOffer);
+                document.getElementById('iao').value = formatCurrency(Math.ceil(xOffer));
+            } catch (error) {
+                console.error('Error in updateXOffer:', error);
+            }
+        }
+
+        function updateDispoFields() {
+            try {
+                const contractedPriceInput = document.getElementById('contractedPrice');
+                const investorPriceInput = document.getElementById('investorPrice');
+                const assignmentFee = document.getElementById('assignmentFee');
+                const mao = parseFloat(document.getElementById('mao').value.replace(/[$,]/g, '')) || 0;
+                if (!contractedPriceInput.dataset.manuallyEdited || contractedPriceInput.dataset.manuallyEdited === 'false') {
+                    contractedPriceInput.value = formatCurrency(Math.ceil(mao - 20000));
+                }
+                if (!investorPriceInput.dataset.manuallyEdited || investorPriceInput.dataset.manuallyEdited === 'false') {
+                    investorPriceInput.value = formatCurrency(Math.ceil(mao));
+                }
+                const contractedPrice = parseFloat(contractedPriceInput.value.replace(/[$,]/g, '')) || 0;
+                const investorPrice = parseFloat(investorPriceInput.value.replace(/[$,]/g, '')) || 0;
+                const fee = Math.ceil(investorPrice - contractedPrice);
+                assignmentFee.value = formatCurrency(fee);
+            } catch (error) {
+                console.error('Error in updateDispoFields:', error);
+            }
+        }
+
+        function updateYourAssignmentFee() {
+            try {
+                const assignmentFee = parseFloat(document.getElementById('assignmentFee').value.replace(/[$,]/g, '')) || 0;
+                const jvSplit = document.getElementById('jvSplit').value;
+                let yourShare = assignmentFee;
+                if (jvSplit) {
+                    const [yourPercent] = jvSplit.split('/').map(Number);
+                    yourShare = Math.ceil((yourPercent / 100) * assignmentFee);
+                }
+                document.getElementById('yourAssignmentFee').value = formatCurrency(yourShare);
+            } catch (error) {
+                console.error('Error in updateYourAssignmentFee:', error);
+            }
+        }
+
+        function updateClosingCosts() {
+            try {
+                const closingCostsDollarsInput = document.getElementById('closingCostsDollars');
+                const agentCommissionsDollarsInput = document.getElementById('agentCommissionsDollars');
+                const holdingCostsDollarsInput = document.getElementById('holdingCostsDollars');
+                const totalCosts = document.getElementById('totalCosts');
+                const adjustedArv = parseFloat(document.getElementById('adjustedArv').value.replace(/[$,]/g, '')) || 0;
+                const investorPrice = parseFloat(document.getElementById('investorPrice').value.replace(/[$,]/g, '')) || 0;
+                const repairs = parseFloat(document.getElementById('repairs').value.replace(/[$,]/g, '')) || 0;
+                const closingCostsBuyPercent = parseFloat(document.getElementById('closingCostsBuyPercent').value) / 100 || 0;
+                const closingCostsSellPercent = parseFloat(document.getElementById('closingCostsSellPercent').value) / 100 || 0;
+                const buyerAgentCommissionPercent = parseFloat(document.getElementById('buyerAgentCommissionPercent').value) / 100 || 0;
+                const listingAgentCommissionPercent = parseFloat(document.getElementById('listingAgentCommissionPercent').value) / 100 || 0;
+                const holdingPeriodDays = parseFloat(document.getElementById('holdingPeriodDays').value) || 0;
+
+                if (!closingCostsDollarsInput.dataset.manuallyEdited || closingCostsDollarsInput.dataset.manuallyEdited === 'false') {
+                    const closingCosts = Math.ceil((investorPrice * closingCostsBuyPercent) + (adjustedArv * closingCostsSellPercent));
+                    closingCostsDollarsInput.value = formatCurrency(closingCosts);
+                }
+
+                if (!agentCommissionsDollarsInput.dataset.manuallyEdited || agentCommissionsDollarsInput.dataset.manuallyEdited === 'false') {
+                    const agentCommissions = Math.ceil(adjustedArv * (buyerAgentCommissionPercent + listingAgentCommissionPercent));
+                    agentCommissionsDollarsInput.value = formatCurrency(agentCommissions);
+                }
+
+                if (!holdingCostsDollarsInput.dataset.manuallyEdited || holdingCostsDollarsInput.dataset.manuallyEdited === 'false') {
+                    const holdingCosts = Math.ceil((holdingPeriodDays / 30) * ((investorPrice + repairs) * 0.004 + (investorPrice * 0.0035)));
+                    holdingCostsDollarsInput.value = formatCurrency(holdingCosts);
+                }
+
+                const closingCostsDollars = parseFloat(closingCostsDollarsInput.value.replace(/[$,]/g, '')) || 0;
+                const agentCommissionsDollars = parseFloat(agentCommissionsDollarsInput.value.replace(/[$,]/g, '')) || 0;
+                const holdingCostsDollars = parseFloat(holdingCostsDollarsInput.value.replace(/[$,]/g, '')) || 0;
+                const total = Math.ceil(closingCostsDollars + agentCommissionsDollars + holdingCostsDollars + repairs);
+                totalCosts.value = formatCurrency(total);
+            } catch (error) {
+                console.error('Error in updateClosingCosts:', error);
+            }
+        }
+function updateAllCalculations() {
+    try {
+        const adjustedArv = parseFloat(document.getElementById('adjustedArv').value.replace(/[$,]/g, '')) || 0;
+        const investorPrice = parseFloat(document.getElementById('investorPrice').value.replace(/[$,]/g, '')) || 0;
+        const contractedPrice = parseFloat(document.getElementById('contractedPrice').value.replace(/[$,]/g, '')) || 0;
+        const repairs = parseFloat(document.getElementById('repairs').value.replace(/[$,]/g, '')) || 0;
+        const totalCosts = parseFloat(document.getElementById('totalCosts').value.replace(/[$,]/g, '')) || 0;
+        const holdingPeriodDays = parseFloat(document.getElementById('holdingPeriodDays').value) || 0;
+        const closingCostsBuyPercent = parseFloat(document.getElementById('closingCostsBuyPercent').value) / 100 || 0;
+        const closingCostsSellPercent = parseFloat(document.getElementById('closingCostsSellPercent').value) / 100 || 0;
+        const closingCostsBuy = Math.ceil(contractedPrice * closingCostsBuyPercent) || 0;
+        const closingCostsSell = Math.ceil(adjustedArv * closingCostsSellPercent) || 0;
+        const agentCommissionsDollars = parseFloat(document.getElementById('agentCommissionsDollars').value.replace(/[$,]/g, '')) || 0;
+
+        // Investor Profit
+        const investorProfitInput = document.getElementById('investorProfit');
+        const investorProfit = Math.ceil(adjustedArv - investorPrice - totalCosts);
+        investorProfitInput.value = formatCurrency(investorProfit);
+
+        // Booty Calculations
+        const bootyMonthlyProfitInput = document.getElementById('bootyMonthlyProfit');
+        const bootyRoiInput = document.getElementById('bootyRoi');
+        const bootyRjRatioInput = document.getElementById('bootyRjRatio');
+
+        const bootyMonthlyProfit = holdingPeriodDays > 0 ? Math.ceil(investorProfit / (holdingPeriodDays / 30)) : 0;
+        bootyMonthlyProfitInput.value = formatCurrency(bootyMonthlyProfit);
+
+        const bootyRoi = (investorPrice + repairs) > 0 ? Math.ceil((investorProfit / (investorPrice + repairs)) * 100) : 0;
+        bootyRoiInput.value = bootyRoi !== 0 ? `${bootyRoi}%` : '';
+
+        const bootyRjRatio = repairs > 0 ? Math.ceil((investorProfit / repairs) * 100) : 0;
+        bootyRjRatioInput.value = bootyRjRatio !== 0 ? `${bootyRjRatio}%` : '';
+
+        // Pre-Assignment Profit Calculations
+        const preAssignmentProfitInput = document.getElementById('preAssignmentProfit');
+        const holdingCosts = holdingPeriodDays > 0 ? Math.ceil((holdingPeriodDays / 30) * ((contractedPrice + repairs) * 0.004 + (contractedPrice * 0.0035))) : 0;
+        const preAssignmentProfit = Math.ceil(adjustedArv - contractedPrice - (closingCostsBuy + closingCostsSell) - agentCommissionsDollars - holdingCosts - repairs);
+        preAssignmentProfitInput.value = formatCurrency(preAssignmentProfit);
+
+        const preAssignmentMonthlyProfitInput = document.getElementById('preAssignmentMonthlyProfit');
+        const preAssignmentRoiInput = document.getElementById('preAssignmentRoi');
+        const preAssignmentRjRatioInput = document.getElementById('preAssignmentRjRatio');
+
+        const preAssignmentMonthlyProfit = holdingPeriodDays > 0 ? Math.ceil(preAssignmentProfit / (holdingPeriodDays / 30)) : 0;
+        preAssignmentMonthlyProfitInput.value = formatCurrency(preAssignmentMonthlyProfit);
+
+        const preAssignmentRoi = (contractedPrice + repairs) > 0 ? Math.ceil((preAssignmentProfit / (contractedPrice + repairs)) * 100) : 0;
+        preAssignmentRoiInput.value = preAssignmentRoi !== 0 ? `${preAssignmentRoi}%` : '';
+
+        const preAssignmentRjRatio = repairs > 0 ? Math.ceil((preAssignmentProfit / repairs) * 100) : 0;
+        preAssignmentRjRatioInput.value = preAssignmentRjRatio !== 0 ? `${preAssignmentRjRatio}%` : '';
+
+        // Apply Conditional Formatting
+        applyConditionalFormatting(bootyMonthlyProfitInput, bootyMonthlyProfit);
+        applyConditionalFormatting(bootyRoiInput, bootyRoi);
+        applyConditionalFormatting(bootyRjRatioInput, bootyRjRatio);
+        applyConditionalFormatting(preAssignmentMonthlyProfitInput, preAssignmentMonthlyProfit);
+        applyConditionalFormatting(preAssignmentRoiInput, preAssignmentRoi);
+        applyConditionalFormatting(preAssignmentRjRatioInput, preAssignmentRjRatio);
+    } catch (error) {
+        console.error('Error in updateAllCalculations:', error);
+    }
+}
+
+function applyConditionalFormatting(input, value) {
+    try {
+        if (!userHasInteracted) return;
+        const allowedFields = [
+            'bootyMonthlyProfit', 'bootyRoi', 'bootyRjRatio',
+            'preAssignmentMonthlyProfit', 'preAssignmentRoi', 'preAssignmentRjRatio'
+        ];
+        if (!allowedFields.includes(input.id)) return;
+        input.classList.remove('positive', 'midrange', 'negative', 'blank');
+        if (value === '' || isNaN(value)) {
+            input.classList.add('blank');
+            return;
+        }
+        if (input.id === 'bootyMonthlyProfit' || input.id === 'preAssignmentMonthlyProfit') {
+            if (value >= 10000) input.classList.add('positive'); // Green: #D4EDDA
+            else if (value >= 5000 && value < 10000) input.classList.add('midrange'); // Gray: #E2E3E5
+            else input.classList.add('negative'); // Red: #F8D7DA
+        } else if (input.id === 'bootyRoi' || input.id === 'preAssignmentRoi') {
+            if (value >= 20) input.classList.add('positive'); // Green: #D4EDDA
+            else if (value >= 10 && value < 20) input.classList.add('midrange'); // Gray: #E2E3E5
+            else input.classList.add('negative'); // Red: #F8D7DA
+        } else if (input.id === 'bootyRjRatio' || input.id === 'preAssignmentRjRatio') {
+            if (value > 80) input.classList.add('positive'); // Green: #D4EDDA
+            else if (value >= 50 && value <= 80) input.classList.add('midrange'); // Gray: #E2E3E5
+            else input.classList.add('negative'); // Red: #F8D7DA
+        }
+    } catch (error) {
+        console.error('Error in applyConditionalFormatting:', error);
+    }
+}
+
+function updateFixAndFlipScore() {
+    try {
+        if (!userHasInteracted) {
+            console.log('User has not interacted, skipping updateFixAndFlipScore');
+            return;
+        }
+        const preAssignmentProfit = parseFloat(document.getElementById('preAssignmentProfit').value.replace(/[$,]/g, '')) || 0;
+        const preAssignmentMonthlyProfit = parseFloat(document.getElementById('preAssignmentMonthlyProfit').value.replace(/[$,]/g, '')) || 0;
+        const preAssignmentRoi = parseFloat(document.getElementById('preAssignmentRoi').value.replace(/%/g, '')) || 0;
+        const preAssignmentRjRatio = parseFloat(document.getElementById('preAssignmentRjRatio').value.replace(/%/g, '')) || 0;
+
+        let score = 0; // Start at 0, max 10 points
+
+        // Pre-Assignment Profit Score
+        if (preAssignmentProfit >= 30000) score += 1;
+
+        // Pre-Assignment Monthly Profit Score
+        if (preAssignmentMonthlyProfit >= 10000) score += 3;
+        else if (preAssignmentMonthlyProfit >= 5000 && preAssignmentMonthlyProfit < 10000) score += 1.5;
+
+        // Pre-Assignment ROI Score
+        if (preAssignmentRoi >= 20) score += 3;
+        else if (preAssignmentRoi >= 10 && preAssignmentRoi < 20) score += 1.5;
+
+        // Pre-Assignment RJ Ratio Score
+        if (preAssignmentRjRatio >= 80) score += 3;
+        else if (preAssignmentRjRatio >= 50 && preAssignmentRjRatio < 80) score += 1.5;
+
+        
+        const fixAndFlipScore = document.getElementById('fixAndFlipScore');
+        // Display score as a fraction out of 10
+        fixAndFlipScore.value = score !== 0 ? `${score}/10` : '';
+        console.log(`Fix and Flip Score updated: ${score}/10`);
+    } catch (error) {
+        console.error('Error in updateFixAndFlipScore:', error);
+    }
+}
+
+</script>
+  </body>
+</html>
